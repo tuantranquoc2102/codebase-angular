@@ -57,3 +57,52 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Setting up Tailwind CSS
+
+Here's how to set up Tailwind CSS in your project:
+
+## 1. Install Tailwind CSS and its dependencies
+
+```bash
+# Sử dụng npm
+npm install -D tailwindcss@3.4.1 postcss@8.4.35 autoprefixer@10.4.17
+
+# Hoặc sử dụng yarn
+yarn add -D tailwindcss@3.4.1 postcss@8.4.35 autoprefixer@10.4.17
+
+npx tailwindcss init -p
+```
+
+This installs Tailwind CSS, PostCSS, and Autoprefixer, then creates both `tailwind.config.js` and `postcss.config.js` files.
+
+## 2. Configure your template paths
+
+Edit your `tailwind.config.js` file to tell Tailwind which files to scan for class usage:
+
+```js:tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{html,ts}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+Adjust the `content` paths to match your project structure.
+
+## 3. Add the Tailwind directives to your CSS
+
+Create or update your main CSS file (often `src/index.css` or similar) with:
+
+```styles.scss
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Would you like me to provide more specific setup instructions for a particular framework (React, Vue, Next.js, etc.)?
